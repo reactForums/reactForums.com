@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `{ reactForums }`,
+    description: `The future of forums is here`,
+    author: `@mosesintech`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +25,15 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: 'WPGraphQL',
+        fieldName: 'wpgraphql',
+        refetchInterval: 60,
+        url: 'http://localhost:8888/reactforums.com/graphql'
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
