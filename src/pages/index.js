@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
 					<ul className="featured">
 						{features.map(feat => (
 						<li key={feat.featureName}>
-							<span className="pennant"><span className={`fa fa-${feat.featureIcon}`}></span></span>
+							<span className="pennant"><span className={feat.featureIcon}></span></span>
 							<h3>{feat.featureName}</h3>
 							<p>{feat.featureText}</p>
 						</li>
