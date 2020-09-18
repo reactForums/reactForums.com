@@ -36,7 +36,9 @@ const Header = () => {
             <ul>
               {data.wpgraphql.menu.menuItems.edges.map(({ node }) => {
                 return (
-                  <li className={(node.label.toLowerCase() === 'download' ? 'current_page_item' : '')}>
+                  <li 
+                    className={(node.label.toLowerCase() === 'download' ? 'current_page_item' : '')}
+                    key={node.label}>
                     <Link to={`/${node.label.toLowerCase()}`}>
                       {node.label}
                     </Link>
@@ -44,7 +46,7 @@ const Header = () => {
               )})}
               <li>
                 <a href='http://twitter.com/reactforums' target="_blank" rel="noopener noreferrer">
-                  <i class="fab fa-twitter"></i>
+                  <i className="fab fa-twitter"></i>
                 </a>
               </li>
             </ul>
