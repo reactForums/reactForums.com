@@ -33,7 +33,7 @@ module.exports = {
         typeName: 'WPGraphQL',
         fieldName: 'wpgraphql',
         refetchInterval: 60,
-        url: 'http://localhost:8888/reactforums.com/graphql'
+        url: 'https://data.reactforums.com/graphql'
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
