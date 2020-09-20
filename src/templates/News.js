@@ -3,16 +3,19 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 
-const NewsTemplate = ({ data }) => (
+const NewsTemplate = ({ data }) => {
+  const { title, excerpt, date, content } = data.wpgraphql.post;
+  return (
   <Layout>
-    <SEO title={data.wpgraphql.post.title} description={data.wpgraphql.post.excerpt} />
-    <h1>{data.wpgraphql.post.title}</h1>
+    <SEO title={title} description={excerpt} />
+    <h1>{title}</h1>
     <p>
-      Written on {data.wpgraphql.post.date}
+      Written on {date}
     </p>
-    <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.post.content }} />
+    <div dangerouslySetInnerHTML={{ __html: content }} />
   </Layout>
-)
+  )
+}
 export default NewsTemplate
 export const query = graphql`
   query($id: ID!) {

@@ -8,6 +8,7 @@ import Default from '../components/pages/default'
 
 const PageTemplate = ({ data }) => {
     const page = data.wpgraphql.page;
+    const blog = data.wpgraphql.posts;
     const { title } = data.wpgraphql.page;
     switch (title) {
         case 'About':
@@ -15,7 +16,7 @@ const PageTemplate = ({ data }) => {
         case 'Docs':
           return <Docs {...page} />
         case 'News':
-          return <News {...page} />
+          return <News {...page} {...blog}/>
         case 'Download':
           return <Download {...page} />
         default:
@@ -27,6 +28,19 @@ export default PageTemplate
 export const query = graphql`
   query($id: ID!) {
     wpgraphql {
+      posts {
+        nodes {
+          title
+          slug
+          excerpt
+          date
+          author {
+            node {
+              name
+            }
+          }
+        }
+      }
       page(id: $id) {
         title
         content
