@@ -4,12 +4,12 @@ import NewsSidebar from "../../components/layout/news/sidebar.js"
 import SEO from "../../components/seo"
 
 const News = props => {
-    // const { pageTitle, byline } = props.bylineAbout;
+    const { title, content } = props;
     return (
         <Layout>
             <SEO
-            title={props.title}
-            description={props.content}
+            title={title}
+            description={content}
             />
             <div id="main">
                 <div class="container">

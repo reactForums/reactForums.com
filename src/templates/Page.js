@@ -41,6 +41,12 @@ export const query = graphql`
           pageHeader
           pageSubtitle
         }
+        downloadContent {
+          pageHeader
+          versionNumber
+          downloadButtonText
+          downloadButtonLink
+        }
       }
     }
   }

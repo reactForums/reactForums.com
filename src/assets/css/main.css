@@ -2278,7 +2278,7 @@ input, select, textarea {
 			}
 
 
-				#nav > ul > li > a, #nav > ul > li > span {
+				#nav > ul > li > a, #nav > ul > li > span, .download_link {
 					-moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 					-webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 					-ms-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
@@ -2299,7 +2299,7 @@ input, select, textarea {
 			color: #fff;
 		}
 
-		#nav li.current_page_item > a, #nav li.current_page_item > span {
+		#nav li.current_page_item > a, #nav li.current_page_item > span, .download_link {
 			background: #7C9CD0;
 			color: #FFF;
 		}

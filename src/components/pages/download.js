@@ -3,12 +3,12 @@ import Layout from "../../components/layout/layout"
 import SEO from "../../components/seo"
 
 const Download = props => {
-    // const { pageTitle, byline } = props.bylineAbout;
+    const { title, content, downloadContent } = props;
     return (
         <Layout>
             <SEO
-            title={props.title}
-            description={props.content}
+            title={title}
+            description={content}
             />
             <div id="main">
                 <div class="container">
@@ -16,8 +16,14 @@ const Download = props => {
                     <div id="content" class="col-12">
                         <article>
                         <header>
-                            <h2>Test</h2>
-                            {/* {(!byline ? "" : <span class="byline">{byline}</span>)} */}
+                            <h2>{downloadContent.pageHeader}</h2>
+                            <span className="byline">{downloadContent.versionNumber}</span>
+                            <a 
+                            href={`${downloadContent.downloadButtonLink}`} 
+                            className="download"
+                            >
+                                {downloadContent.downloadButtonText}
+                            </a>
                         </header>
                         <div dangerouslySetInnerHTML={{ __html: props.content }} />
                         </article>
