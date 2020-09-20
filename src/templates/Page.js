@@ -47,6 +47,10 @@ export const query = graphql`
           downloadButtonText
           downloadButtonLink
         }
+        newsContent {
+          pageHeader
+          pageSubtitle
+        }
       }
     }
   }

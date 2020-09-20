@@ -4,7 +4,7 @@ import NewsSidebar from "../../components/layout/news/sidebar.js"
 import SEO from "../../components/seo"
 
 const News = props => {
-    const { title, content } = props;
+    const { title, content, newsContent } = props;
     return (
         <Layout>
             <SEO
@@ -18,8 +18,8 @@ const News = props => {
                     <div id="content" class="col-8">
                         <article>
                         <header>
-                            <h2>Test</h2>
-                            {/* {(!byline ? "" : <span class="byline">{byline}</span>)} */}
+                            <h2>{newsContent.pageHeader}</h2>
+                            <span class="byline">{newsContent.pageSubtitle}</span>
                         </header>
                         <div dangerouslySetInnerHTML={{ __html: props.content }} />
                         </article>
