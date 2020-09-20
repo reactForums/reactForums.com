@@ -5,12 +5,12 @@ import RightSidebar from "../../components/layout/docs/rightSidebar"
 import SEO from "../../components/seo"
 
 const Docs = props => {
-    // const { pageTitle, byline } = props.bylineAbout;
+    const { title, content, documentationContent } = props;
     return (
         <Layout>
             <SEO
-            // title={pageTitle}
-            description={props.content}
+            title={title}
+            description={content}
             />
             <div id="main">
                 <div class="container">
@@ -19,10 +19,10 @@ const Docs = props => {
                     <div id="content" class="col-6">
                         <article>
                         <header>
-                            <h2>Test</h2>
-                            {/* {(!byline ? "" : <span class="byline">{byline}</span>)} */}
+                            <h2 dangerouslySetInnerHTML={{__html: documentationContent.pageHeader}} />
+                            <span class="byline">{documentationContent.pageSubtitle}</span>
                         </header>
-                        <div dangerouslySetInnerHTML={{ __html: props.content }} />
+                        <div dangerouslySetInnerHTML={{ __html: content }} />
                         </article>
                     </div>
                     <RightSidebar />

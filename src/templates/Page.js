@@ -37,6 +37,10 @@ export const query = graphql`
           text
           icon
         }
+        documentationContent {
+          pageHeader
+          pageSubtitle
+        }
       }
     }
   }

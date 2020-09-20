@@ -7,7 +7,7 @@ const Default = props => {
     return (
         <Layout>
             <SEO
-            // title={pageTitle}
+            title={props.title}
             description={props.content}
             />
             <div id="main">
