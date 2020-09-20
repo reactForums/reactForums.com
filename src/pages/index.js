@@ -13,6 +13,7 @@ const IndexPage = ({ data }) => {
     header,
     icon,
     text, } = data.wpgraphql.page.homeContent;
+
 	return (
 		<Layout>
 			<SEO

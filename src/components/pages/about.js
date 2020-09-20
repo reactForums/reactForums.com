@@ -3,12 +3,12 @@ import Layout from "../../components/layout/layout"
 import SEO from "../../components/seo"
 
 const About = props => {
-    // const { pageTitle, byline } = props.bylineAbout;
+    const { title, content, aboutContent } = props;
     return (
         <Layout>
             <SEO
-            // title={pageTitle}
-            description={props.content}
+            title={title}
+            description={content}
             />
             <div id="main">
                 <div class="container">
@@ -16,8 +16,8 @@ const About = props => {
                     <div id="content" class="col-12">
                         <article>
                         <header>
-                            <h2>Test</h2>
-                            {/* {(!byline ? "" : <span class="byline">{byline}</span>)} */}
+                            <h2>{aboutContent.aboutHeader}</h2>
+                            <span class="byline">{aboutContent.aboutSubtitle}</span>
                         </header>
                         <div dangerouslySetInnerHTML={{ __html: props.content }} />
                         </article>
@@ -25,6 +25,15 @@ const About = props => {
                     </div>
                 </div>
             </div>
+        <div id="tweets">
+          <div class="container">
+            <span class="pennant">
+              <span class={`icon brands fa-${aboutContent.icon}`}></span>
+            </span>
+            <span class="tweet">{aboutContent.header}</span>
+            <p dangerouslySetInnerHTML={{__html: aboutContent.text}} />
+          </div>
+        </div>
         </Layout>
     )
 }

@@ -30,6 +30,13 @@ export const query = graphql`
       page(id: $id) {
         title
         content
+        aboutContent {
+          aboutHeader
+          aboutSubtitle
+          header
+          text
+          icon
+        }
       }
     }
   }
