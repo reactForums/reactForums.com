@@ -17,13 +17,13 @@ const AdminTemplate = ({ data }) => {
 )}
 export default AdminTemplate
 
-export const query = graphql`
-  query($id: ID!) {
-    wpgraphql {
-      post(id: $id) {
-        title
-        content
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query($id: ID!) {
+//     wpgraphql {
+//       post(id: $id) {
+//         title
+//         content
+//       }
+//     }
+//   }
+// `
