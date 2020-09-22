@@ -35,8 +35,9 @@ const NewsSidebar = (props) => {
             </header>
             <ul class="alt">
               {archive.map(date => {
+                const slug = date.replace(' ', '-');
                 return (
-                  <li><Link to={`/news/archive/${date}`}>{date}</Link></li>
+                  <li><Link to={`/news/archive/${slug}`}>{date}</Link></li>
                 )
               })}
             </ul>
