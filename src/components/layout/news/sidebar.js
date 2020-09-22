@@ -15,35 +15,35 @@ const NewsSidebar = (props) => {
     return archive.push(date);
   })
 
-    return (
-        <div id="sidebar" class="col-4 col-12-narrower">
-          <section>
-            <header>
-              <h2>News & Announcements</h2>
-            </header>
-            <ul class="alt">
-              {props.posts.map(post => {
-                return (
-                  <li><Link to={`/news/${post.slug}`}>{post.title}</Link></li>
-                )
-              })}
-            </ul>
-          </section>
-          <section>
-            <header>
-              <h2>Archive</h2>
-            </header>
-            <ul class="alt">
-              {archive.map(date => {
-                const slug = date.replace(' ', '-');
-                return (
-                  <li><Link to={`/news/archive/${slug}`}>{date}</Link></li>
-                )
-              })}
-            </ul>
-          </section>
-        </div>
-    )
+  return (
+    <div id="sidebar" class="col-4 col-12-narrower">
+      <section>
+        <header>
+          <h2>News & Announcements</h2>
+        </header>
+        <ul class="alt">
+          {props.posts.map(post => {
+            return (
+              <li><Link to={`/news/${post.slug}`}>{post.title}</Link></li>
+            )
+          })}
+        </ul>
+      </section>
+      <section>
+        <header>
+          <h2>Archive</h2>
+        </header>
+        <ul class="alt">
+          {archive.map(date => {
+            const slug = date.replace(' ', '-');
+            return (
+              <li><Link to={`/news/archive/${slug}`}>{date}</Link></li>
+            )
+          })}
+        </ul>
+      </section>
+    </div>
+  )
 }
 
 export default NewsSidebar
