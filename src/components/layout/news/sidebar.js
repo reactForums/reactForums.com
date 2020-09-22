@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-const NewsSidebar = () => {
+const NewsSidebar = (props) => {
     return (
         <div id="sidebar" class="col-4 col-12-narrower">
               <section>
@@ -8,12 +9,11 @@ const NewsSidebar = () => {
                   <h2>News & Announcements</h2>
                 </header>
                 <ul class="alt">
-                  <li><a href="/">Moses to Run for U.S. Presidency</a></li>
-                  <li><a href="/">The Roadmap for 2021</a></li>
-                  <li><a href="/">Security Patch in New Version</a></li>
-                  <li><a href="/">The Beta Release</a></li>
-                  <li><a href="/">The New Community Board</a></li>
-                  <li><a href="/">Humble Beginnings</a></li>
+                  {props.posts.map(post => {
+                    return (
+                      <li><Link to={`/news/${post.slug}`}>{post.title}</Link></li>
+                    )
+                  })}
                 </ul>
               </section>
               <section>

@@ -17,7 +17,7 @@ const News = props => {
             <div id="main">
                 <div class="container">
                     <div class="row">
-                    <NewsSidebar />
+                    <NewsSidebar posts={posts} />
                     <div id="content" class="col-8">
                         <article>
                         <header>
