@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-const LeftSidebar = () => {
+const LeftSidebar = (props) => {
+  const docs = props.docs.nodes;
     return (
       <div id="sidebar" class="col-3 col-12-narrower">
         <section>
@@ -8,14 +10,9 @@ const LeftSidebar = () => {
             <h2>Admin Docs</h2>
           </header>
           <ul class="alt">
-            <li><a href="/">01. Getting Started</a></li>
-            <li><a href="/">02. Administration</a></li>
-            <li><a href="/">03. Users</a></li>
-            <li><a href="/">04. Forum</a></li>
-            <li><a href="/">05. Moderation</a></li>
-            <li><a href="/">06. Timeline</a></li>
-            <li><a href="/">07. Theming</a></li>
-            <li><a href="/">08. Security</a></li>
+            {docs.map(doc => (
+              <li key={doc.id}><Link to={`/how-to/${doc.slug}`}>{doc.name}</Link></li>
+            ))}
           </ul>
         </section>
       </div>
