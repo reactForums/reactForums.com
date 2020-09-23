@@ -6,7 +6,7 @@ import NewsSidebar from "../components/layout/news/sidebar.js"
 import moment from 'moment/moment'
 
 const NewsTemplate = ({ data }) => {
-  const { title, excerpt, date, content, author } = data.wpgraphql.post;
+  const { title, excerpt, date, content, author, postContent } = data.wpgraphql.post;
   const posts = data.wpgraphql.posts.nodes;
   return (
   <Layout>
@@ -20,6 +20,7 @@ const NewsTemplate = ({ data }) => {
               <header>
                 <h2>{title}</h2>
                 <span class="byline">Written by {author.node.name} on {moment(date).format('MMMM D, YYYY')}.</span>
+                <span class="byline">{postContent.versionNumber}</span>
               </header>
               <div dangerouslySetInnerHTML={{__html: content}} />
             </article>
@@ -40,6 +41,9 @@ export const query = graphql`
         content
         excerpt
         date
+        postContent {
+          versionNumber
+        }
         author {
           node {
             name
@@ -51,6 +55,9 @@ export const query = graphql`
           title
           slug
           date
+          postContent {
+            versionNumber
+          }
         }
       }
     }
